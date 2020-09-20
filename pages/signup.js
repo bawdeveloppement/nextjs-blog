@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function Signup () {
     function handleClick () {
-        fetch("http://localhost:3000/api/user/signup", {
+        fetch("/api/user/signup", {
             method: "POST",
             body: JSON.stringify({
                 username: "new user",
