@@ -17,23 +17,19 @@ export function getStaticProps() {
 }
 
 function dataIsUptodate (buildData, remoteData) {
-
     return true
 }
 
 export default function UserList ({ users }) {
     // This is why we should update the data
-    const [usersState, setUsers] = useState([]);
+    const [usersState, setUsers] = useState(users);
 
     useEffect(() => {
         // here we will check for a difference between our data and the data of the api
         fetch("/api/users")
         .then(res => res.json())
         .then(value => {
-            setTimeout(() => {
-                setUsers(value);
-                console.log("update");
-            }, 3000);
+            setUsers(value);
         });
     }, []);
 
