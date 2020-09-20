@@ -30,6 +30,7 @@ export default function UserList ({ users }) {
         .then(res => res.json())
         .then(value => {
             setUsers(value);
+            console.log(value);
             console.log("update");
         });
     }, []);
