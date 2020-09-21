@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import Date from "../components/date"
 import { getAllUsers } from "../lib/users"
 
+
 // Here we are passing the Users in the props 
 // Note: This data passing to the props is from the build time
 // So if the data is updated since the last build time, your web page will not be up to date
@@ -29,6 +30,7 @@ export default function UserList ({ users }) {
         fetch("/api/users")
         .then(res => res.json())
         .then(value => {
+
             setUsers(value);
             console.log(value);
             console.log("update");
